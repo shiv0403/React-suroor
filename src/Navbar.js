@@ -1,13 +1,20 @@
 import React from "react";
 import "./Navbar.css";
 
+const buttonStyle = {
+  backgroundColor: "#0779e4",
+  color: "#fff",
+  borderRadius: "10px",
+  padding: "9px",
+};
+
 function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar_first">
         <ul>
           <li>Suroor</li>
-          <li>Home</li>
+          <li style={buttonStyle}>Home</li>
           <li>Search</li>
         </ul>
       </div>

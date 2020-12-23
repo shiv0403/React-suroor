@@ -1,0 +1,41 @@
+.sidebar {
+  background-color: #fff;
+  height: 100vh;
+  flex: 0.15;
+  padding-top: 20px;
+}
+
+.sidebar_option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: center !important;
+}
+
+.sidebar_option > p {
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+
+.new_playlist {
+  display: flex;
+  align-items: center;
+}
+
+.new_playlist > p {
+  color: #0779e4;
+  font-weight: 700;
+}
+
+.sidebar_button {
+  border-radius: 20px;
+  padding: 7px 15px;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-color: #0779e4;
+}
+
+.sidebar_third > li > p {
+  cursor: pointer;
+}

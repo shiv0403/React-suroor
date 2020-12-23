@@ -1,12 +1,13 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
 }
 
 .navbar_first > ul {
   display: flex;
+  align-items: center;
 }
 
 .navbar_first > ul > li {
@@ -21,6 +22,7 @@
 
 .navbar_second > ul {
   display: flex;
+  align-items: center;
 }
 
 .navbar_second > ul > li {

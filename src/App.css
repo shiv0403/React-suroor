@@ -6,3 +6,12 @@
 body {
   background-color: #dbdbdb;
 }
+
+.app_main {
+  display: flex;
+}
+
+hr {
+  color: #3333;
+  margin-top: 20px;
+}
