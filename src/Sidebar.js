@@ -38,6 +38,8 @@ function Sidebar() {
         </li>
       </ul>
 
+      <hr />
+
       <ul className="sidebar_second">
         <li>
           <div className="sidebar_option">

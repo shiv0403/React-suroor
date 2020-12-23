@@ -1,4 +1,75 @@
 .player {
-  position: absolute;
+  position: sticky;
   bottom: 0;
+  height: 65px;
+  z-index: 10;
+  background: rgb(50, 58, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(50, 58, 190, 1) 0%,
+    rgba(204, 42, 204, 1) 92%
+  );
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player_left {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  max-width: 300px;
+}
+
+.album_logo {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.player_albuminfo > h4 {
+  margin-bottom: 5px;
+}
+
+.player_albuminfo > p {
+  font-size: 12px;
+}
+
+.player_center {
+  flex: 0.3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player_right > ul {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  /* justify-content: space-between; */
+}
+
+.player_right_volume {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0 20px; */
+}
+
+.player_right > ul > li {
+  padding: 0 20px;
+}
+
+.player_right * .MuiSlider-root {
+  color: #ffffff;
+}
+
+.player_icon:hover,
+.player_green:hover {
+  transition: transform 0.2s ease-out;
+  transform: scale(1.2) !important;
 }
