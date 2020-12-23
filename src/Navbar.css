@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.navbar_first > ul {
+  display: flex;
+}
+
+.navbar_first > ul > li {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+.navbar_first > ul > li:hover {
+  cursor: pointer;
+}
+
+.navbar_second > ul {
+  display: flex;
+}
+
+.navbar_second > ul > li {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+.navbar_second > ul > li:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
