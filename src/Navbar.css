@@ -3,6 +3,9 @@
   justify-content: space-between;
   padding: 10px;
   background-color: #fff;
+  -webkit-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.4);
 }
 
 .navbar_first > ul {
