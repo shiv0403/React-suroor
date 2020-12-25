@@ -7,6 +7,7 @@ import ShuffleIcon from "@material-ui/icons/Shuffle";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import VolumeDownIcon from "@material-ui/icons/VolumeDown";
+import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Slider } from "@material-ui/core";
 
@@ -30,6 +31,12 @@ function Player() {
 
   const [volume, setVolume] = useState(30);
   const [length, setLength] = useState(0);
+  const [isPlaying, setIsplaying] = useState(0);
+  const [audio] = useState(
+    new Audio(
+      "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
+    )
+  );
 
   const handleChangeSong = (event, newValue) => {
     setLength(newValue);
@@ -38,6 +45,24 @@ function Player() {
   const handleChangeVolume = (event, newValue) => {
     setVolume(newValue);
   };
+
+  const handleSongStatus = () => {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+
+    setIsplaying(!isPlaying);
+  };
+
+  document.addEventListener("Spacebar", (e) => {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  });
 
   return (
     <div className="player">
@@ -54,7 +79,20 @@ function Player() {
         <div className="player_center_buttons">
           <ShuffleIcon className="player_icon" />
           <SkipPreviousIcon className="player_icon" />
-          <PlayCircleOutlineIcon fontSize="large" className="player_icon" />
+          {!isPlaying ? (
+            <PlayCircleOutlineIcon
+              fontSize="large"
+              className="player_icon"
+              onClick={handleSongStatus}
+            />
+          ) : (
+            <PauseCircleOutlineIcon
+              fontSize="large"
+              className="player_icon"
+              onClick={handleSongStatus}
+            />
+          )}
+
           <SkipNextIcon className="player_icon" />
           <RepeatIcon className="player_icon" />
         </div>

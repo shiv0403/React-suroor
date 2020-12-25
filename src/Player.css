@@ -88,7 +88,7 @@
   padding-right: 10px;
 }
 
-.player_right > ul > li {
+.player_right > ul > li:nth-of-type(2) {
   padding: 0 5px;
 }
 
