@@ -39,7 +39,7 @@ function Player() {
   const [isMuted, setIsMuted] = useState(0);
   const [audio] = useState(
     new Audio(
-      "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3"
+      "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
     )
   );
   const [currentDuration, setCurrentDuration] = useState("00:00");
@@ -55,7 +55,10 @@ function Player() {
   };
 
   const handleChangeVolume = (event, newValue) => {
-    setVolume(newValue);
+    if (!audio.ended) {
+      setVolume(newValue);
+      audio.volume = newValue / 100;
+    }
   };
 
   const handleSongStatus = () => {
@@ -84,7 +87,14 @@ function Player() {
     if (!audio.ended) {
       let playedMinutes = parseInt(audio.currentTime / 60);
       let playedSeconds = parseInt(audio.currentTime % 60);
-      setCurrentDuration(playedMinutes + ":" + playedSeconds);
+      if (playedSeconds / 10 < 1) {
+        console.log(playedSeconds);
+        setCurrentDuration(playedMinutes + ":0" + playedSeconds);
+      } else {
+        console.log(playedSeconds);
+        setCurrentDuration(playedMinutes + ":" + playedSeconds);
+      }
+
       setLength((audio.currentTime * 100) / audio.duration);
     } else {
       setCurrentDuration("00:00");
@@ -92,8 +102,12 @@ function Player() {
     }
   };
 
-  const fullDuration =
+  let fullDuration =
     parseInt(audio.duration / 60) + ":" + parseInt(audio.duration % 60);
+
+  if (!audio.readyState) {
+    fullDuration = "00:00";
+  }
 
   return (
     <div className="player">
