@@ -55,7 +55,9 @@
 }
 
 .player_center_slider {
-  /* width: 800px; */
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
 }
 
 .player_icon:hover,
