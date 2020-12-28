@@ -37,27 +37,40 @@ function Player() {
   const [length, setLength] = useState(0);
   const [isPlaying, setIsplaying] = useState(0);
   const [isMuted, setIsMuted] = useState(0);
+  const [currentDuration, setCurrentDuration] = useState("00:00");
+  const [fullDuration, setFullDuration] = useState("0:00");
+  const [updateTime, setUpdateTime] = useState(0);
   const [audio] = useState(
     new Audio(
-      "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
+      "https://medium.loadbig.info/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhbGJ1bV9pZCI6MjEyMDIsInRpbWVvdXQiOjE2MDkxNTAyODR9.8nG4Cz2HNf1WKanPuQHCzHsey_lbr74277zTrutCa9E/jdnnh/Tum%20Mile%20%28Love%20Reprise%29%20-%20%28amlijatt.in%29.mp3"
     )
   );
-  const [currentDuration, setCurrentDuration] = useState("00:00");
-  const [updateTime, setUpdateTime] = useState(0);
 
   // handling events functions
+
+  // volume
+  const handleChangeVolume = (event, newValue) => {
+    setVolume(newValue);
+    audio.volume = volume / 100;
+  };
+
+  const handleMute = () => {
+    setIsMuted(!isMuted);
+    audio.muted = true;
+  };
+
+  const handleUnMute = () => {
+    setIsMuted(!isMuted);
+    audio.muted = false;
+  };
+
+  //song slider
+
   const handleChangeSong = (event, newValue) => {
     if (!audio.ended) {
       setLength(newValue);
       const newTime = (newValue * audio.duration) / 100;
       audio.currentTime = newTime;
-    }
-  };
-
-  const handleChangeVolume = (event, newValue) => {
-    if (!audio.ended) {
-      setVolume(newValue);
-      audio.volume = newValue / 100;
     }
   };
 
@@ -73,25 +86,13 @@ function Player() {
     setIsplaying(!isPlaying);
   };
 
-  const handleMute = () => {
-    setIsMuted(!isMuted);
-    audio.muted = true;
-  };
-
-  const handleUnMute = () => {
-    setIsMuted(!isMuted);
-    audio.muted = false;
-  };
-
   const update = () => {
     if (!audio.ended) {
       let playedMinutes = parseInt(audio.currentTime / 60);
       let playedSeconds = parseInt(audio.currentTime % 60);
       if (playedSeconds / 10 < 1) {
-        console.log(playedSeconds);
         setCurrentDuration(playedMinutes + ":0" + playedSeconds);
       } else {
-        console.log(playedSeconds);
         setCurrentDuration(playedMinutes + ":" + playedSeconds);
       }
 
@@ -100,14 +101,17 @@ function Player() {
       setCurrentDuration("00:00");
       setLength(0);
     }
+
+    if (audio.readyState) {
+      let fullDurationMinutes = parseInt(audio.duration / 60);
+      let fullDurationSeconds = parseInt(audio.duration % 60);
+      if (fullDurationSeconds / 10 < 1) {
+        fullDurationSeconds = "0" + fullDurationSeconds;
+      }
+      setFullDuration(fullDurationMinutes + ":" + fullDurationSeconds);
+      console.log(fullDuration);
+    }
   };
-
-  let fullDuration =
-    parseInt(audio.duration / 60) + ":" + parseInt(audio.duration % 60);
-
-  if (!audio.readyState) {
-    fullDuration = "00:00";
-  }
 
   return (
     <div className="player">
