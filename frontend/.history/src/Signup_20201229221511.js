@@ -34,8 +34,9 @@ function Signup() {
   return (
     <div className="signup">
       <h1>Signup Page</h1>
+      {currentUser && currentUser.email}
       {error && <p>{error}</p>}
-
+      <br />
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -53,12 +54,7 @@ function Signup() {
         />
         <br />
 
-        <input
-          type="password"
-          required
-          ref={confPasswordRef}
-          placeholder="Confirm Password"
-        />
+        <input type="password" required ref={confPasswordRef} />
         <br />
         <button disabled={loading} type="submit">
           Sign Up

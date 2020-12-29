@@ -34,8 +34,9 @@ function Signup() {
   return (
     <div className="signup">
       <h1>Signup Page</h1>
+      {currentUser && currentUser.email}
       {error && <p>{error}</p>}
-
+      <br />
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -44,21 +45,11 @@ function Signup() {
           placeholder="Email Address"
         />
         <br />
-
-        <input
-          type="password"
-          required
-          ref={passwordRef}
-          placeholder="Password"
-        />
+        <label htmlFor="password">Password</label>
+        <input type="password" required ref={passwordRef} />
         <br />
-
-        <input
-          type="password"
-          required
-          ref={confPasswordRef}
-          placeholder="Confirm Password"
-        />
+        <label htmlFor="confPassword">Password Confirmation</label>
+        <input type="password" required ref={confPasswordRef} />
         <br />
         <button disabled={loading} type="submit">
           Sign Up

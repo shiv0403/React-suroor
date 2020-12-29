@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-
 .signup {
   width: 50%;
   margin: auto;
@@ -15,41 +13,20 @@
   text-align: center;
 }
 
-.signup > h1 {
-  font-size: 2.5rem;
-  color: #3d3d3d;
-}
-
 .signup > form > input[type="email"],
 .signup > form > input[type="password"] {
   width: 400px;
   height: 30px;
   margin: auto;
-  outline: none;
-  border-color: #0779e4;
-  padding: 7px;
-  font-size: 1.1rem;
 }
 
 .signup > form > button {
-  width: 60%;
-  height: 40px;
-  border-radius: 20px;
+  width: 80%;
+  height: 30px;
+  border-radius: 30px;
   margin-top: 20px;
-  background: rgb(31, 78, 224);
-  background: linear-gradient(
-    90deg,
-    rgba(31, 78, 224, 1) 0%,
-    rgba(186, 88, 240, 1) 84%
-  );
+  background-color: #0779e4;
   color: #fff;
   font-weight: 700;
-  font-size: 1.1rem;
-  outline: none;
-  border: none;
-}
-
-.signup > form > button:hover {
-  transition: transform 0.3s ease-out;
-  transform: scale(1.1);
+  font-size: 1.2rem;
 }

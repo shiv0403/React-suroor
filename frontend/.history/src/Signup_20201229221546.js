@@ -35,7 +35,7 @@ function Signup() {
     <div className="signup">
       <h1>Signup Page</h1>
       {error && <p>{error}</p>}
-
+      <br />
       <form onSubmit={handleSubmit}>
         <input
           type="email"

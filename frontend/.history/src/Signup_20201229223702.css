@@ -16,8 +16,9 @@
 }
 
 .signup > h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #3d3d3d;
+  font-family: "Indie Flower", cursive;
 }
 
 .signup > form > input[type="email"],
