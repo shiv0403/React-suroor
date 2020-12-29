@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Dashboard from "./Dashboard";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
 import { AuthProvider } from "./AuthProvider";
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Route exact path="/" component={Dashboard} />
+        <PrivateRoute exact path="/" component={Dashboard} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
       </AuthProvider>

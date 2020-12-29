@@ -1,0 +1,8 @@
+.signup {
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+  height: 70vh;
+  display: grid;
+  place-items: center;
+}

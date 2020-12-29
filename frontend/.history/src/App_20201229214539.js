@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Route exact path="/" component={Dashboard} />
+        <PrivateRoute exact path="/" component={Dashboard} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
       </AuthProvider>
