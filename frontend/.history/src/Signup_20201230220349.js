@@ -42,12 +42,9 @@ function Signup() {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log(doc.data());
-        } else {
-          console.log("No such document found!");
+          console.log(doc.data);
         }
-      })
-      .catch((err) => console.log(err));
+      });
 
     console.log("going");
   };

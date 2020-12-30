@@ -20,38 +20,6 @@ function Signup() {
 
   const History = useHistory();
 
-  const handleInsert = async () => {
-    // db.collection("users")
-    //   .add({
-    //     name: String(fnameRef.current.value + " " + lnameRef.current.value),
-    //     age: ageRef.current.value,
-    //     email: String(emailRef.current.value),
-    //     password: String(passwordRef.current.value),
-    //     country: String(countryRef.current.value),
-    //     avatar: String(avatarRef.current.value),
-    //   })
-    //   .then((result) => {
-    //     console.log("Document added successfully!", result);
-    //   })
-    //   .catch((err) => {
-    //     console.log("Failed to add document!", err);
-    //   });
-
-    db.collection("users")
-      .doc("93HiqYuhN9gjk4iyWpqF")
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          console.log(doc.data());
-        } else {
-          console.log("No such document found!");
-        }
-      })
-      .catch((err) => console.log(err));
-
-    console.log("going");
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -63,9 +31,22 @@ function Signup() {
     try {
       setLoading(true);
 
-      await handleInsert();
       await signup(emailRef.current.value, passwordRef.current.value);
-
+      db.collection("users")
+        .add({
+          name: String(fnameRef.current.value + " " + lnameRef.current.value),
+          age: ageRef.current.value,
+          email: String(emailRef.current.value),
+          password: String(passwordRef.current.value),
+          country: String(countryRef.current.value),
+          avatar: avatarRef.current.value,
+        })
+        .then((result) => {
+          console.log("Document added successfully!", result);
+        })
+        .catch((err) => {
+          console.log("Failed to add document!", err);
+        });
       History.push("/");
     } catch {
       setError("Failed to Create your Account");

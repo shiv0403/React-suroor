@@ -21,35 +21,23 @@ function Signup() {
   const History = useHistory();
 
   const handleInsert = async () => {
-    // db.collection("users")
-    //   .add({
-    //     name: String(fnameRef.current.value + " " + lnameRef.current.value),
-    //     age: ageRef.current.value,
-    //     email: String(emailRef.current.value),
-    //     password: String(passwordRef.current.value),
-    //     country: String(countryRef.current.value),
-    //     avatar: String(avatarRef.current.value),
-    //   })
-    //   .then((result) => {
-    //     console.log("Document added successfully!", result);
-    //   })
-    //   .catch((err) => {
-    //     console.log("Failed to add document!", err);
-    //   });
-
     db.collection("users")
-      .doc("93HiqYuhN9gjk4iyWpqF")
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          console.log(doc.data());
-        } else {
-          console.log("No such document found!");
-        }
+      .add({
+        name: String(fnameRef.current.value + " " + lnameRef.current.value),
+        age: ageRef.current.value,
+        email: String(emailRef.current.value),
+        password: String(passwordRef.current.value),
+        country: String(countryRef.current.value),
+        avatar: String(avatarRef.current.value),
       })
-      .catch((err) => console.log(err));
+      .then((result) => {
+        console.log("Document added successfully!", result);
+      })
+      .catch((err) => {
+        console.log("Failed to add document!", err);
+      });
 
-    console.log("going");
+    console.log("entered");
   };
 
   const handleSubmit = async (e) => {

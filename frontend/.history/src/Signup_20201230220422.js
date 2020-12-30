@@ -46,8 +46,7 @@ function Signup() {
         } else {
           console.log("No such document found!");
         }
-      })
-      .catch((err) => console.log(err));
+      });
 
     console.log("going");
   };

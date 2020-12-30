@@ -37,18 +37,6 @@ function Signup() {
     //     console.log("Failed to add document!", err);
     //   });
 
-    db.collection("users")
-      .doc("93HiqYuhN9gjk4iyWpqF")
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          console.log(doc.data());
-        } else {
-          console.log("No such document found!");
-        }
-      })
-      .catch((err) => console.log(err));
-
     console.log("going");
   };
 
