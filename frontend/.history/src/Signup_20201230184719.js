@@ -77,8 +77,7 @@ function Signup() {
               ref={emailRef}
               placeholder="Email Address"
             />
-          </div>
-          <div className="signup_password">
+
             <input
               type="password"
               required

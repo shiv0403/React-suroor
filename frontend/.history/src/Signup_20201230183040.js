@@ -46,56 +46,37 @@ function Signup() {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className="signup_main">
-          <div className="signup_name">
-            <input
-              type="text"
-              required
-              ref={fnameRef}
-              placeholder="First Name"
-            />
-            <input
-              type="text"
-              required
-              ref={lnameRef}
-              placeholder="Last Name"
-            />
-          </div>
-          <div className="signup_about">
-            <input type="number" required ref={ageRef} placeholder="Age" />
-            <input
-              type="text"
-              required
-              ref={countryRef}
-              placeholder="Country"
-            />
-          </div>
-          <div className="signup_email">
-            <input
-              type="email"
-              required
-              ref={emailRef}
-              placeholder="Email Address"
-            />
-          </div>
-          <div className="signup_password">
-            <input
-              type="password"
-              required
-              ref={passwordRef}
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              required
-              ref={confPasswordRef}
-              placeholder="Confirm Password"
-            />
-          </div>
-          <div className="signup_avatar">
-            <input type="file" />
-          </div>
+        <div className="signup_name">
+          <input type="text" required ref={fnameRef} placeholder="First Name" />
+          <input type="text" required ref={lnameRef} placeholder="Last Name" />
         </div>
+        <div className="signup_about">
+          <input type="number" required ref={ageRef} placeholder="Age" />
+          <input type="text" required ref={countryRef} placeholder="Country" />
+        </div>
+        <input
+          type="email"
+          required
+          ref={emailRef}
+          placeholder="Email Address"
+        />
+        <br />
+
+        <input
+          type="password"
+          required
+          ref={passwordRef}
+          placeholder="Password"
+        />
+        <br />
+
+        <input
+          type="password"
+          required
+          ref={confPasswordRef}
+          placeholder="Confirm Password"
+        />
+        <br />
         <button disabled={loading} type="submit">
           Sign Up
         </button>

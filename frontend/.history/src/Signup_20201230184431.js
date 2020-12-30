@@ -70,15 +70,14 @@ function Signup() {
               placeholder="Country"
             />
           </div>
-          <div className="signup_email">
+          <div className="signup_emailPass">
             <input
               type="email"
               required
               ref={emailRef}
               placeholder="Email Address"
             />
-          </div>
-          <div className="signup_password">
+
             <input
               type="password"
               required

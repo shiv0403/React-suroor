@@ -13,12 +13,6 @@
   box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
   text-align: center;
-  background: rgb(247, 199, 255);
-  background: linear-gradient(
-    45deg,
-    rgba(247, 199, 255, 1) 0%,
-    rgba(175, 176, 254, 1) 100%
-  );
 }
 
 .login > h1 {

@@ -42,7 +42,7 @@ function Player() {
   const [updateTime, setUpdateTime] = useState(0);
   const [audio] = useState(
     new Audio(
-      "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
+      "https://medium.loadbig.info/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhbGJ1bV9pZCI6MjEyMDIsInRpbWVvdXQiOjE2MDkxNTAyODR9.8nG4Cz2HNf1WKanPuQHCzHsey_lbr74277zTrutCa9E/jdnnh/Tum%20Mile%20%28Love%20Reprise%29%20-%20%28amlijatt.in%29.mp3"
     )
   );
 
