@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .signup {
   width: 50%;
   margin: auto;
@@ -11,6 +13,13 @@
   box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
   text-align: center;
+  background: rgb(59, 104, 242);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 104, 242, 1) 0%,
+    rgba(181, 116, 217, 1) 90%
+  );
+  color: #fff;
 }
 
 .signup > h1 {
@@ -75,13 +84,4 @@
 
 .signup_login {
   font-size: 1.3rem;
-}
-
-.signup_error {
-  background-color: #f53333;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 20px;
-  border-radius: 10px;
 }

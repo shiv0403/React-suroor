@@ -8,7 +8,7 @@ function Signup() {
   const passwordRef = useRef();
   const confPasswordRef = useRef();
 
-  const { signup } = useAuth();
+  const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ function Signup() {
     setError("");
 
     if (passwordRef.current.value !== confPasswordRef.current.value) {
-      return setError("Passwords do not match!");
+      setError("Passwords do not match!");
     }
 
     try {
@@ -27,7 +27,7 @@ function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       History.push("/");
     } catch {
-      setError("Failed to Create your Account");
+      setError("Failed to create your Account");
     }
   };
 
@@ -35,7 +35,7 @@ function Signup() {
     <div className="signup">
       <h1>Signup Page</h1>
       {error && (
-        <div className="signup_error">
+        <div className="login_error">
           <p>{error}</p>
         </div>
       )}

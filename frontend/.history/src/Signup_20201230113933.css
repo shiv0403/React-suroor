@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .signup {
   width: 50%;
   margin: auto;
@@ -24,30 +26,13 @@
   height: 30px;
   margin: auto;
   outline: none;
+  border-color: #0779e4;
   padding: 7px;
   font-size: 1.1rem;
 }
 
-.signup > form > input[type="password"]:nth-of-type(even) {
-  border-color: #0779e4;
-  border-top: none;
-  border-bottom: none;
-}
-
 .signup > form > input[type="password"]:nth-of-type(odd) {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-color: #0779e4;
-  border-left-color: #0779e4;
-  border-right-color: #0779e4;
-}
-
-.signup > form > input[type="email"] {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-top-color: #0779e4;
-  border-left-color: #0779e4;
-  border-right-color: #0779e4;
+  border-radius: 10px;
 }
 
 .signup > form > button {
@@ -71,17 +56,4 @@
 .signup > form > button:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.1);
-}
-
-.signup_login {
-  font-size: 1.3rem;
-}
-
-.signup_error {
-  background-color: #f53333;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 20px;
-  border-radius: 10px;
 }

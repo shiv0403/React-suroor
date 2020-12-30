@@ -76,12 +76,3 @@
 .signup_login {
   font-size: 1.3rem;
 }
-
-.signup_error {
-  background-color: #f53333;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 20px;
-  border-radius: 10px;
-}

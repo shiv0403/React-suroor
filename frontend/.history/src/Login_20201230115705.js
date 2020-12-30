@@ -8,7 +8,7 @@ function Signup() {
   const passwordRef = useRef();
   const confPasswordRef = useRef();
 
-  const { signup } = useAuth();
+  const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ function Signup() {
     setError("");
 
     if (passwordRef.current.value !== confPasswordRef.current.value) {
-      return setError("Passwords do not match!");
+      setError("Passwords do not match!");
     }
 
     try {
@@ -27,18 +27,14 @@ function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       History.push("/");
     } catch {
-      setError("Failed to Create your Account");
+      setError("Failed to create your Account");
     }
   };
 
   return (
     <div className="signup">
-      <h1>Signup Page</h1>
-      {error && (
-        <div className="signup_error">
-          <p>{error}</p>
-        </div>
-      )}
+      <h1>Login Page</h1>
+      {error && <p>{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -57,20 +53,13 @@ function Signup() {
         />
         <br />
 
-        <input
-          type="password"
-          required
-          ref={confPasswordRef}
-          placeholder="Confirm Password"
-        />
-        <br />
         <button disabled={loading} type="submit">
-          Sign Up
+          Log In
         </button>
       </form>
       <div className="signup_login">
         <p>
-          Already have an Account? <Link to="/login">Login</Link>
+          Already have an Account? <Link to="/login">SignUp</Link>
         </p>
       </div>
     </div>

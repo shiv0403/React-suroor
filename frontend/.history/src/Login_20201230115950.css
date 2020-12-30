@@ -1,4 +1,4 @@
-.signup {
+.login {
   width: 50%;
   margin: auto;
   background-color: #fff;
@@ -13,13 +13,13 @@
   text-align: center;
 }
 
-.signup > h1 {
+.login > h1 {
   font-size: 2.5rem;
   color: #3d3d3d;
 }
 
-.signup > form > input[type="email"],
-.signup > form > input[type="password"] {
+.login > form > input[type="email"],
+.login > form > input[type="password"] {
   width: 400px;
   height: 30px;
   margin: auto;
@@ -28,13 +28,13 @@
   font-size: 1.1rem;
 }
 
-.signup > form > input[type="password"]:nth-of-type(even) {
+.login > form > input[type="password"]:nth-of-type(even) {
   border-color: #0779e4;
   border-top: none;
   border-bottom: none;
 }
 
-.signup > form > input[type="password"]:nth-of-type(odd) {
+.login > form > input[type="password"]:nth-of-type(odd) {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-color: #0779e4;
@@ -42,7 +42,7 @@
   border-right-color: #0779e4;
 }
 
-.signup > form > input[type="email"] {
+.login > form > input[type="email"] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-top-color: #0779e4;
@@ -50,7 +50,7 @@
   border-right-color: #0779e4;
 }
 
-.signup > form > button {
+.login > form > button {
   width: 60%;
   height: 40px;
   border-radius: 20px;
@@ -68,20 +68,11 @@
   border: none;
 }
 
-.signup > form > button:hover {
+.login > form > button:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.1);
 }
 
-.signup_login {
+.login_signup {
   font-size: 1.3rem;
-}
-
-.signup_error {
-  background-color: #f53333;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 20px;
-  border-radius: 10px;
 }

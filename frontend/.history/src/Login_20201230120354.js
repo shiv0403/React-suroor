@@ -1,14 +1,13 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
-import "./Signup.css";
+import "./Login.css";
 
 function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const confPasswordRef = useRef();
 
-  const { signup } = useAuth();
+  const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -18,27 +17,19 @@ function Signup() {
     e.preventDefault();
     setError("");
 
-    if (passwordRef.current.value !== confPasswordRef.current.value) {
-      return setError("Passwords do not match!");
-    }
-
     try {
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, passwordRef.current.value);
       History.push("/");
     } catch {
-      setError("Failed to Create your Account");
+      setError("Failed to login to your Account");
     }
   };
 
   return (
-    <div className="signup">
-      <h1>Signup Page</h1>
-      {error && (
-        <div className="signup_error">
-          <p>{error}</p>
-        </div>
-      )}
+    <div className="login">
+      <h1>Login Page</h1>
+      <div className="login_error">{error && <p>{error}</p>}</div>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -57,20 +48,13 @@ function Signup() {
         />
         <br />
 
-        <input
-          type="password"
-          required
-          ref={confPasswordRef}
-          placeholder="Confirm Password"
-        />
-        <br />
         <button disabled={loading} type="submit">
-          Sign Up
+          Log In
         </button>
       </form>
-      <div className="signup_login">
+      <div className="login_signup">
         <p>
-          Already have an Account? <Link to="/login">Login</Link>
+          Need an Account? <Link to="/signup">SignUp</Link>
         </p>
       </div>
     </div>
